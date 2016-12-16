@@ -1,0 +1,43 @@
+{
+  "name": "dsm.site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OmerDob/dsm.site.git"
+  },
+  "author": "Omer Dobzinsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OmerDob/dsm.site/issues"
+  },
+  "homepage": "https://github.com/OmerDob/dsm.site#readme",
+  "devDependencies": {
+    "@types/core-js": "^0.9.35",
+    "express": "^4.14.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-exec": "^1.0.1",
+    "grunt-typescript-using-tsconfig": "^0.7.1"
+  },
+  "dependencies": {
+    "@angular/common": "^2.3.1",
+    "@angular/compiler": "^2.3.1",
+    "@angular/core": "^2.3.1",
+    "@angular/forms": "^2.3.1",
+    "@angular/http": "^2.3.1",
+    "@angular/platform-browser": "^2.3.1",
+    "@angular/platform-browser-dynamic": "^2.3.1",
+    "@angular/router": "^3.3.1",
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "^5.0.0-rc.4",
+    "systemjs": "^0.19.41",
+    "zone.js": "^0.7.2"
+  }
+}

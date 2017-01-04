@@ -19,10 +19,12 @@
   "homepage": "https://github.com/OmerDob/dsm.site#readme",
   "devDependencies": {
     "@types/core-js": "^0.9.35",
+    "@types/node": "^6.0.52",
     "express": "^4.14.0",
     "grunt": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-exec": "^1.0.1",
+    "grunt-remove": "^0.1.0",
     "grunt-typescript-using-tsconfig": "^0.7.1"
   },
   "dependencies": {

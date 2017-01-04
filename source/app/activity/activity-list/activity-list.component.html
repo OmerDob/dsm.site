@@ -1,0 +1,12 @@
+<div class="container">
+    <a routerLink="/activity" class="button">+ Create Activity</a>
+    <ul>
+        <li *ngFor="let activity of activities">
+            <div class="activity-card">
+                <h3 (click)="editActivity(activity)">{{activity.name}}</h3>
+                <span>{{activity.startDate | date:'dd/MM/yyyy HH:mm'}} - {{activity.endDate | date:'dd/MM/yyyy HH:mm'}} at {{activity.location}}</span>
+                <p>{{activity.description}}</p>
+            </div>
+        </li>
+    </ul>
+</div>

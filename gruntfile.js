@@ -19,11 +19,17 @@ module.exports = function (grunt) {
         },
         exec: {
             tsc: 'tsc'
+        },
+        remove: {
+            bin: {
+                dirList: ['bin']
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-exec');
+    grunt.loadNpmTasks('grunt-remove');
 
-    grunt.registerTask('build', ['copy:dev', 'exec:tsc']);
+    grunt.registerTask('build', ['remove:bin', 'copy:dev', 'exec:tsc']);
 };

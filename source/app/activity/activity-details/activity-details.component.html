@@ -1,0 +1,27 @@
+<div class="container">
+    <form (ngSubmit)="saveActivity()" #activityForm="ngForm">
+        <div class="form-field">
+            <label>Name</label>
+            <input type="text" name="name" [(ngModel)]="activity.name" required>
+        </div>
+        <div class="form-field">
+            <label>Starts on</label>
+            <dsm-date-time [(ngModel)]="activity.startDate" name="startDate" required></dsm-date-time>
+        </div>
+        <div class="form-field">
+            <label>Ends on</label>
+            <dsm-date-time [(ngModel)]="activity.endDate" name="endDate" required></dsm-date-time>
+        </div>
+        <div class="form-field">
+            <label>Location</label>
+            <input type="text" name="location" [(ngModel)]="activity.location">
+        </div>
+        <div class="form-field">
+            <label>Description</label>
+            <textarea name="description" [(ngModel)]="activity.description"></textarea>
+        </div>
+        <div class="form-footer">
+            <button type="submit">Save</button>
+        </div>
+    </form>
+</div>

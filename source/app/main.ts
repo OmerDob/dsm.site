@@ -1,5 +1,5 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { DsmModule } from './dsm.module';
+import { DsmAppModule } from './dsm-app.module';
 
-platformBrowserDynamic().bootstrapModule(DsmModule);
+platformBrowserDynamic().bootstrapModule(DsmAppModule);

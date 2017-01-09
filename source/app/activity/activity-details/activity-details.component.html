@@ -1,25 +1,38 @@
 <div class="container">
-    <form (ngSubmit)="saveActivity()" #activityForm="ngForm">
-        <div class="form-field">
-            <label>Name</label>
-            <input type="text" name="name" [(ngModel)]="activity.name" required>
-        </div>
-        <div class="form-field">
-            <label>Starts on</label>
-            <dsm-date-time [(ngModel)]="activity.startDate" name="startDate" required></dsm-date-time>
-        </div>
-        <div class="form-field">
-            <label>Ends on</label>
-            <dsm-date-time [(ngModel)]="activity.endDate" name="endDate" required></dsm-date-time>
-        </div>
-        <div class="form-field">
-            <label>Location</label>
+    <form (ngSubmit)="saveActivity()" #activityForm="ngForm" novalidate>
+        <dsm-input
+            fieldName="Name"
+            [form]="activityForm"
+            [errors]="activityName.errors"
+            [errorMessages]="{required: 'Activity name is required.'}">
+            <input type="text" name="name" [(ngModel)]="activity.name" required #activityName="ngModel">
+        </dsm-input>
+        <dsm-input-group
+            ngModelGroup
+            dsmAscending
+            [form]="activityForm"
+            [errorMessages]="{dsmAscending: 'End date and time must be greater than or equal to start date and time.'}">
+            <dsm-input
+                fieldName="Starts on"
+                [form]="activityForm"
+                [errors]="activityStartDate.errors"
+                [errorMessages]="{required: 'Activity start date and time are required.'}">
+                <dsm-date-time [(ngModel)]="activity.startDate" name="startDate" requiredDate #activityStartDate="ngModel"></dsm-date-time>
+            </dsm-input>
+            <dsm-input
+                fieldName="Ends on"
+                [form]="activityForm"
+                [errors]="activityEndDate.errors"
+                [errorMessages]="{required: 'Activity end date and time are required.'}">
+                <dsm-date-time [(ngModel)]="activity.endDate" name="endDate" requiredDate #activityEndDate="ngModel"></dsm-date-time>
+            </dsm-input>
+        </dsm-input-group>
+        <dsm-input fieldName="Location" [form]="activityForm">
             <input type="text" name="location" [(ngModel)]="activity.location">
-        </div>
-        <div class="form-field">
-            <label>Description</label>
+        </dsm-input>
+        <dsm-input fieldName="Description" [form]="activityForm">
             <textarea name="description" [(ngModel)]="activity.description"></textarea>
-        </div>
+        </dsm-input>
         <div class="form-footer">
             <button type="submit">Save</button>
         </div>

@@ -6,12 +6,17 @@ export class Activity {
     location: string;
     description: string;
 
-    constructor(activity?: {_id?, name?, startDate?, endDate?, location?, description?}) {
-        activity = activity || {
-            startDate: Date.now(),
-            endDate: Date.now()
-        };
-
+    constructor(activity: {
+        _id?,
+        name?,
+        startDate?,
+        endDate?,
+        location?,
+        description?
+    } = {
+        startDate: Date.now(),
+        endDate: Date.now()
+    }) {
         this.id = activity._id;
         this.name = activity.name;
         this.startDate = new Date(activity.startDate);

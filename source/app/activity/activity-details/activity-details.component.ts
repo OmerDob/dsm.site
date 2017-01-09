@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgForm, NgControl } from '@angular/forms';
 
 import { Activity } from '../activity';
 import { ActivityService } from '../activity.service';
@@ -13,6 +14,7 @@ import 'rxjs/add/operator/map';
 })
 export class ActivityDetailsComponent implements OnInit {
     @Input() activity: Activity;
+    @ViewChild('activityForm') activityForm: NgForm;
 
     constructor(
         private router: Router,
@@ -28,14 +30,16 @@ export class ActivityDetailsComponent implements OnInit {
     }
 
     saveActivity() {
-        var savePromise: Promise<void>;
+        if (this.activityForm.valid) {
+            var savePromise: Promise<void>;
 
-        if (!this.activity.id) {
-            savePromise = this.activityService.createActivity(this.activity);
-        } else {
-            savePromise = this.activityService.updateActivity(this.activity);
+            if (!this.activity.id) {
+                savePromise = this.activityService.createActivity(this.activity);
+            } else {
+                savePromise = this.activityService.updateActivity(this.activity);
+            }
+
+            savePromise.then(() => this.router.navigate(['/']));
         }
-
-        savePromise.then(() => this.router.navigate(['/']));
     }
 }

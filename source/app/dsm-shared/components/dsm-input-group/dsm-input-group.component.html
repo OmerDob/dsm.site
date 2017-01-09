@@ -1,0 +1,6 @@
+<div class="field-group">
+    <ng-content></ng-content>
+    <div class="message error" *ngIf="form.submitted && errorMessage">
+        {{errorMessage}}
+    </div>
+</div>

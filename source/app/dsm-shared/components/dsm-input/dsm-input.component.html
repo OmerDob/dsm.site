@@ -1,0 +1,8 @@
+<div class="form-field"
+    [ngClass]="{'has-error': form.submitted && errors}">
+    <label>{{fieldName}}</label>
+    <ng-content></ng-content>
+    <div class="message error" *ngIf="form.submitted && errorMessage">
+        {{errorMessage}}
+    </div>
+</div>
